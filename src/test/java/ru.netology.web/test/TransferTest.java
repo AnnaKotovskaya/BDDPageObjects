@@ -68,11 +68,8 @@ class MoneyTransferTest {
         var firstCardBalance = dashboardPage.getCardBalance(cardInfoFirst);
         var secondCardBalance = dashboardPage.getCardBalance(cardInfoSecond);
         var amount = generateInvalidAmount(firstCardBalance);
-        //var amount = generateInvalidAmount(secondCardBalance);
         var transferPage = dashboardPage.selectCard(cardInfoSecond);
-        //var transferPage = dashboardPage.selectCard(cardInfoFirst);
         transferPage.validTransfer(String.valueOf(amount), cardInfoFirst);
-        //transferPage.validTransfer(String.valueOf(amount), cardInfoSecond);
         transferPage.findErrorMesage("Вы ввели сумму, превышающую остаток средств на Вашей карте. Введите другую сумму");
         var actualBalanceFirstCard = dashboardPage.getCardBalance(cardInfoFirst);
         var actualBalanceSecondCard = dashboardPage.getCardBalance(cardInfoSecond);
